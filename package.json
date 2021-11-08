@@ -1,0 +1,25 @@
+{
+  "name": "Contenido_Arteria_API",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://FranciscoArteria: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@github.com/FranciscoArteria/Contenido_Arteria_API.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FranciscoArteria/Contenido_Arteria_API/issues"
+  },
+  "homepage": "https://github.com/FranciscoArteria/Contenido_Arteria_API#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
+  }
+}
