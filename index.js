@@ -25,6 +25,7 @@ app.use( fileUpload({
     useTempFiles : true,
     tempFileDir :'/tmp/'
 }))
+
 //Rutas
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/events', require('./routes/events'));
