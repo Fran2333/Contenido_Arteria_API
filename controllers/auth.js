@@ -104,8 +104,20 @@ const revalidarToken = async(req,res = response)=>{
     })
 }
 
+const usuariosGet = async(req, res = response) =>{
+
+    const usuarios = await Usuario.find()
+                                
+
+    res.json({
+        usuarios
+    })
+
+}
+
 module.exports = {
     crearUsuario,
     loginUsuario,
-    revalidarToken
+    revalidarToken,
+    usuariosGet
 }
