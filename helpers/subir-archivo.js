@@ -5,24 +5,30 @@ const SubirArchivo = (files,extensionesValidas =['png','jpg','jpeg','gif'], carp
 
     return new Promise((resolve, reject) =>{
 
-        const { archivo } = files;
-    const nommbreCortado = archivo.name.split('.');
-    const extension = nommbreCortado [nommbreCortado.length -1]
+    const { archivo } = files;
+    const nombresArray = [];
 
-    //validar la extension
-    if(!extensionesValidas.includes( extension )){
-        return reject(`la extension ${extension} no es permitida, ${extensionesValidas} `);
-    }
+    archivo.map(arc => {
+        const nommbreCortado = arc.name.split('.');
+        const extension = nommbreCortado [nommbreCortado.length -1]
 
-    const nombreTemp = uuidv4() + '.' + extension;
-    const uploadPath = path.join(__dirname, '../uploads/', carpeta , nombreTemp);
+            //validar la extension
+        if(!extensionesValidas.includes( extension )){
+            return reject(`la extension ${extension} no es permitida, ${extensionesValidas} `);
+        }
 
-    archivo.mv(uploadPath, (err) => {
-    if (err)
-        reject(err)
+        const nombreTemp = uuidv4() + '.' + extension;
+        const uploadPath = path.join(__dirname, '../uploads/', carpeta , nombreTemp);
 
-    resolve(nombreTemp)
-    });
+        archivo.mv(uploadPath, (err) => {
+        if (err)
+            reject(err)
+
+        resolve(nombreTemp)
+        });
+    })
+
+    
 
     })
 
